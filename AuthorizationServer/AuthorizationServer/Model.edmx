@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="URDEV_SW_MOBILITYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URDEV_SW_MOBILITY.dbo.Audience' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Audience">
+          <Key>
+            <PropertyRef Name="ClientId" />
+            <PropertyRef Name="Secret" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="Issuer" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="ModifiedOn" />
+            <PropertyRef Name="StatusCode" />
+          </Key>
+          <Property Name="ClientId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Secret" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Issuer" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="StatusCode" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="URDEV_SW_MOBILITYModelStoreContainer">
+          <EntitySet Name="Audience" EntityType="Self.Audience" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Audience].[ClientId] AS [ClientId], 
+    [Audience].[Secret] AS [Secret], 
+    [Audience].[ClientName] AS [ClientName], 
+    [Audience].[Issuer] AS [Issuer], 
+    [Audience].[CreatedOn] AS [CreatedOn], 
+    [Audience].[ModifiedOn] AS [ModifiedOn], 
+    [Audience].[StatusCode] AS [StatusCode]
+    FROM [dbo].[Audience] AS [Audience]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="URDEV_SW_MOBILITYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Audience">
+          <Key>
+            <PropertyRef Name="ClientId" />
+            <PropertyRef Name="Secret" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="Issuer" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="ModifiedOn" />
+            <PropertyRef Name="StatusCode" />
+          </Key>
+          <Property Name="ClientId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Secret" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Issuer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StatusCode" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="URDEV_SW_MOBILITYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Audiences" EntityType="Self.Audience" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="URDEV_SW_MOBILITYModelStoreContainer" CdmEntityContainer="URDEV_SW_MOBILITYEntities">
+          <EntitySetMapping Name="Audiences">
+            <EntityTypeMapping TypeName="URDEV_SW_MOBILITYModel.Audience">
+              <MappingFragment StoreEntitySet="Audience">
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="Secret" ColumnName="Secret" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="Issuer" ColumnName="Issuer" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

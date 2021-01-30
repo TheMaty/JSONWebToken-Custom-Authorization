@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "7d386130-a78d-410d-83b6-5849ad5e48a9",
+		"name": "Mobility - SW- SAM - United Response",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBearerToken (JSON Web Token)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "4B9AA781-1DF0-466D-8C1F-F0A7B142257C",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "nDn9fAOdLZbvKE6H6WlOk5RNC0Gjfto8rfpp1Dfg33zEpfgamvjefskJxznWo/X1swFhUo74+O6iR20DHwwcHTJ3FvBJWRl3VhDQlJWg1o5D5aN11z5bl8E2o863WOD+sTv8ciJCtVeD5A0OM3XWfjLd7zN2Rgsrgzvqj/KLmURAMQ+q9RmLuXMHHdL0tWdBZoEUAzUD/CU3mzrYvUWZPuQQtv6sZw8902H/dA3pFJTjY5ROyS5ZL3J3inN5wvtZ6BoISsz80A2vxidJmt1F6iZO7AXTiyGjg7Vl0pq8btT7EUDAT9KVgoeD1e1g5WaJ/aG4WpzIhQHc6RV1cnavnMEs0WFjvWInQev8qbsdac+JnzlZ+KqsNREGUnIIFBwNuO00VoTLi+CXxXXMO45HoEmnQtUhPcaxgcOoqZHop7s+z7eE9B6Jp9goQUcHVUvqg6EEhTwfKHtgGXGGNqcWkykw0FW3A7SJVFXUcyncKO+uPNZVb1SGE9JXyACct3mSk5B5+xL03ZrYFIxS2zgItMIjIHaGESPJB7+x3RM/7t/bUV8ltCrciQ9CPrgFVEZ+1s0aszd/xKqGWLhwZsmAd+yiF8ylk3AezRQuHHpJ7uVTXdHhE/7bvrkRer5mWYdA/p1yFuFPJL4GbZYBqh4AkPNCLdVabHTxWZ/WYx4V0SM=",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:57022/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57022",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sayHi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57212/api/UR/SAM/Mobility/SupportWorker/sayHi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57212",
+					"path": [
+						"api",
+						"UR",
+						"SAM",
+						"Mobility",
+						"SupportWorker",
+						"sayHi"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
