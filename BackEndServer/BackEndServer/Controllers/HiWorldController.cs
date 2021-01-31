@@ -17,7 +17,11 @@ namespace BackEndServer
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, "Hello Authorized User");
+                string str = ((System.Security.Claims.ClaimsIdentity)this.User.Identity).Claims.First(i => i.Type == "clientID").Value;
+
+
+                return Request.CreateResponse(HttpStatusCode.OK, "Hello Authorized User : " + str);
+
             }
             catch (Exception ex)
             {
